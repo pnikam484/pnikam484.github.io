@@ -1,66 +1,228 @@
 
 <!DOCTYPE html>
-<html lang='en'>
+<html lang="en">
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Pravin Nikam - Profile</title>
-    <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #fafafc; color: #333; }
-        .container { max-width: 900px; margin: 40px auto; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.05); border-radius: 12px; padding: 32px; }
-        h1, h2 { color: #2563eb; }
-        .section { margin-bottom: 38px; }
-        .contact { font-size: 1rem; margin-bottom: 24px; }
-        ul { padding-left: 18px; }
-        .skills-list { display: flex; flex-wrap: wrap; gap: 20px; font-size: 0.99rem; }
-        .skills-list li { background: #e5e7eb; padding: 7px 14px; border-radius: 9px; margin-bottom: 8px; }
-        .experience-entry { margin-bottom: 22px; }
-        .experience-entry h3 { margin-bottom: 4px; color: #3b82f6; }
-        .edu, .cert { margin-bottom: 6px; }
-        @media (max-width: 650px) { .container { padding: 12px; } }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pravin Nikam — Business Analyst & Project Coordinator</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <div class='container'>
-        <h1>Pravin Nikam</h1>
-        <div class='contact'>
-            <strong>Business Analyst & Project Coordinator</strong><br>
-            Pune, India | +91 8999435772 | pravin4u484@gmail.com
-        </div>
-        <div class='section' id='summary'>
-            <h2>Profile</h2>
-            <p>Results-driven Business Analyst with 5+ years’ IT expertise in data analytics, process optimization, AI-driven insights, and cross-team project management across healthcare, banking, and CRM domains. Specialized in leveraging advanced analytics, automation, and emerging technologies to drive business value.</p>
-        </div>
-        <div class='section' id='skills'>
-            <h2>Skills & AI Expertise</h2>
-            <ul class='skills-list'>
-                <li>Technical: SQL, Power BI, Tableau, Infosphere DataStage, ETL, Data Modeling, BRD/FRD, UAT, Agile, SDLC, AI Integration, Automation</li><li>Core: Process Improvement, Stakeholder Management, Project Coordination, Risk Mitigation, Data-Driven Decision Making, AI-enabled Analytics</li><li>Soft: Communication, Collaboration, Analytical Thinking, Leadership, Adaptability</li>
-            </ul>
-        </div>
-        <div class='section' id='experience'>
-            <h2>Professional Experience</h2>
-            <div class='experience-entry'><h3>Cognizant Technology Solutions – Business Analyst <span style='font-weight:normal; color:#475569'>(May 2023–Present)</span></h3><ul><li>Led feasibility studies and implemented analytics tools to deliver actionable insights for healthcare IT projects.</li><li>Developed BRDs/FRDs and coordinated UAT across teams, achieving deployment with zero major defects.</li><li>Designed business process models, driving workflow efficiencies.</li><li>Facilitated AI-powered dashboard creation using Power BI and SQL.</li><li>Reduced process turnaround time by 20%.</li></ul></div><div class='experience-entry'><h3>Electronica Finance Ltd – Assistant Manager <span style='font-weight:normal; color:#475569'>(Feb 2022–Apr 2023)</span></h3><ul><li>Managed stakeholders and requirement traceability for CRM and LOS enhancements.</li><li>Led UAT and strategic planning, guaranteeing alignment with business objectives.</li><li>Deployed KPI dashboards, improving reporting speed by 15%.</li><li>Integrated CRM with AI-powered customer segmentation.</li></ul></div><div class='experience-entry'><h3>IDFC First Bank Limited – Officer Executive <span style='font-weight:normal; color:#475569'>(Apr 2021–Jan 2022)</span></h3><ul><li>Improved MIS systems through optimized reporting.</li><li>Utilized Google Analytics and CRM data for market research and campaign tracking.</li><li>Implemented actionable business insight dashboards.</li></ul></div>
-        </div>
-        <div class='section' id='projects'>
-            <h2>Projects</h2>
-            <ul>
-                <li>ETL Healthcare: Led ETL process development using Infosphere DataStage and AI-based data validation.</li><li>CRM Enhancements: Integrated SalesGo CRM with FinnOne LOS, streamlining data flow and improving process cycle time.</li><li>Banking LOS: Facilitated stakeholder coordination, risk control, and conducted comprehensive system testing.</li>
-            </ul>
-        </div>
-        <div class='section' id='education'>
-            <h2>Education & Certifications</h2>
-            <div class="edu">MBA (Business Analytics), Zeal Education Society, Pune, 2022</div><div class="edu">BCA, Green Fingers College, Solapur, 2020</div>
-            <div style='margin-top:8px;'><strong>Certifications:</strong></div>
-            <div class="cert">Microsoft Power BI (2025)</div><div class="cert">INTERMEDIATE SQL (HackerRank, 2024)</div><div class="cert">Agile Methodologies (2023)</div><div class="cert">Data Analysis with R (2023)</div>
-        </div>
-        <div class='section' id='languages'>
-            <h2>Languages</h2>
-            <p>English, Hindi, Marathi</p>
-        </div>
-        <div class='section' id='hobbies'>
-            <h2>Hobbies</h2>
-            <p>Trekking, Cricket, Traveling, Data Analysis, Problem Solving</p>
-        </div>
+  <header class="nav" id="top">
+    <div class="nav-inner">
+      <a class="brand" href="#top">Pravin Nikam</a>
+
+      <button id="navToggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+
+      <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#profile" class="nav-link">Profile</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn ghost" href="resume.pdf" download>Download Resume</a>
+        <button id="darkToggle" class="icon-btn" aria-pressed="false" title="Toggle dark mode">🌙</button>
+      </div>
     </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-grid container">
+      <div class="hero-text">
+        <h1 class="name">Pravin Nikam</h1>
+        <p class="tagline">Business Analyst & Project Coordinator</p>
+
+        <p class="lead">
+          Results-driven analyst with 5+ years in healthcare, banking and CRM — specializing in ETL,
+          analytics, AI integration, and stakeholder-driven delivery.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn" href="#contact">Contact Me</a>
+          <a class="btn outline" href="#projects">View Projects</a>
+        </div>
+
+        <div class="contact-mini">
+          <span>📍 Pune, India</span>
+          <span>✉️ <a href="mailto:pravin4u484@gmail.com">pravin4u484@gmail.com</a></span>
+          <span>📞 +91 8999435772</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <!-- Replace profile.jpg with your photo (optimal size ~400x400) -->
+        <img class="profile-pic" src="profile.jpg" alt="Pravin Nikam — profile photo" />
+        <div class="hero-stats">
+          <div><strong>5+</strong><small>Years Experience</small></div>
+          <div><strong>Healthcare</strong><small>ETL & HEDIS</small></div>
+          <div><strong>Power BI</strong><small>Dashboards & AI</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- PROFILE -->
+    <section id="profile" class="section container fade-up">
+      <h2>Profile</h2>
+      <p>
+        Results-driven Business Analyst with 5+ years’ IT expertise in data analytics, process optimization,
+        AI-driven insights, and cross-team project management across healthcare, banking, and CRM domains.
+        Specialized in leveraging analytics, automation, and clear requirements (BRD/FRD) to deliver measurable impact.
+      </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section bg-alt fade-up">
+      <div class="container">
+        <h2>Skills & AI Expertise</h2>
+        <div class="skills-grid">
+          <ul class="skills-list">
+            <li>SQL — Advanced</li>
+            <li>Power BI — Dashboards & DAX</li>
+            <li>Tableau — Visual Analytics</li>
+            <li>Infosphere DataStage — ETL</li>
+            <li>Data Modeling & DWH</li>
+            <li>Agile / Scrum / SDLC</li>
+            <li>BRD / FRD / UAT</li>
+            <li>AI Integration & Automation</li>
+          </ul>
+
+          <div class="skill-chips">
+            <div class="chip">Process Improvement</div>
+            <div class="chip">Stakeholder Mgmt</div>
+            <div class="chip">Data Quality</div>
+            <div class="chip">Reporting Automation</div>
+            <div class="chip">HEDIS Support</div>
+            <div class="chip">Scripting: Python (basic)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section container fade-up">
+      <h2>Professional Experience</h2>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <button class="timeline-head" aria-expanded="false">Cognizant Technology Solutions — Business Analyst <span class="date">May 2023 – Present</span></button>
+          <div class="timeline-body">
+            <ul>
+              <li>Led feasibility studies and implemented analytics tools to deliver actionable insights for healthcare IT projects.</li>
+              <li>Developed BRDs/FRDs and coordinated UAT across teams, achieving deployment with zero major defects.</li>
+              <li>Designed business process models and implemented AI-powered dashboards using Power BI and SQL.</li>
+              <li>Reduced process turnaround time by ~20% through automation and process improvements.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <button class="timeline-head" aria-expanded="false">Electronica Finance Ltd — Assistant Manager <span class="date">Feb 2022 – Apr 2023</span></button>
+          <div class="timeline-body">
+            <ul>
+              <li>Managed stakeholders and requirement traceability for CRM and LOS enhancements.</li>
+              <li>Led UAT and strategic planning; deployed KPI dashboards improving reporting speed by 15%.</li>
+              <li>Integrated CRM with AI-based customer segmentation for targeted campaigns.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <button class="timeline-head" aria-expanded="false">IDFC First Bank — Officer Executive <span class="date">Apr 2021 – Jan 2022</span></button>
+          <div class="timeline-body">
+            <ul>
+              <li>Improved MIS systems and reporting; used CRM & Google Analytics for campaign tracking.</li>
+              <li>Built actionable business insight dashboards for the marketing & sales teams.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section bg-alt fade-up">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <h3>ETL Healthcare</h3>
+            <p>Led ETL process design using Infosphere DataStage and implemented AI-based data validation rules to reduce reconciliation errors.</p>
+            <div class="proj-meta">Tools: DataStage, SQL, Power BI</div>
+          </div>
+
+          <div class="project-card">
+            <h3>CRM Enhancements</h3>
+            <p>Integrated SalesGo CRM with FinnOne LOS — streamlined lead to loan data flow and improved SLA adherence.</p>
+            <div class="proj-meta">Tools: CRM, SQL, JIRA</div>
+          </div>
+
+          <div class="project-card">
+            <h3>Banking LOS Support</h3>
+            <p>Coordinated vendor & internal teams, created FRD/BRD, and executed UAT for LOS features across lending lifecycle.</p>
+            <div class="proj-meta">Tools: FinnOne, Test Plans</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="section container fade-up">
+      <h2>Education & Certifications</h2>
+      <div class="edu-grid">
+        <div>
+          <strong>MBA — Business Analytics</strong><br />
+          Zeal Education Society, Pune — 2022
+        </div>
+        <div>
+          <strong>BCA</strong><br />
+          Green Fingers College, Solapur — 2020
+        </div>
+      </div>
+
+      <div class="cert-list">
+        <strong>Certifications:</strong>
+        <ul>
+          <li>Microsoft Power BI (2025)</li>
+          <li>INTERMEDIATE SQL (HackerRank, 2024)</li>
+          <li>Agile Methodologies (2023)</li>
+          <li>Data Analysis with R (2023)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section container fade-up">
+      <h2>Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Get in touch</h3>
+          <p>Email: <a href="mailto:pravin4u484@gmail.com">pravin4u484@gmail.com</a></p>
+          <p>Phone: +91 8999435772</p>
+          <p>Location: Pune, India</p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Social</h3>
+          <p><a href="https://github.com/pnikam484" target="_blank" rel="noopener">GitHub</a></p>
+          <p><a href="https://www.linkedin.com/in/pravin-nikam" target="_blank" rel="noopener">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Pravin Nikam • Built with ❤️ • <a href="privacy.html">Privacy</a></small>
+    </div>
+  </footer>
 </body>
 </html>
