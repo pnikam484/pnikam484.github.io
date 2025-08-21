@@ -207,3 +207,31 @@ body{
 
 /* small screens: show nav when toggled (script will add .open) */
 .nav-links.open{display:flex; flex-direction:column; gap:10px; position:absolute; right:20px; top:64px; background:var(--card); padding:12px; border-radius:10px; box-shadow:0 8px 30px rgba(2,6,23,0.08)}
+
+.skills-bars {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.bar {
+  background: var(--glass);
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+}
+
+.bar .label {
+  display: block;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.progress {
+  height: 8px;
+  border-radius: 6px;
+  background: var(--accent);
+  width: 0;
+  transition: width 1.5s ease-out;
+}
