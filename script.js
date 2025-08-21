@@ -5,10 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
   const yearEl = document.getElementById('year');
 
-  // Set current year
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Initialize theme from localStorage
   const saved = localStorage.getItem('theme');
   if (saved === 'dark') {
     root.setAttribute('data-theme', 'dark');
@@ -20,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     darkToggle.setAttribute('aria-pressed', 'false');
   }
 
-  // Dark mode toggle
   darkToggle?.addEventListener('click', () => {
     const isDark = root.getAttribute('data-theme') === 'dark';
     if (isDark) {
@@ -36,26 +33,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Mobile nav toggle
   navToggle?.addEventListener('click', () => {
     navLinks.classList.toggle('open');
   });
 
-  // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
-        navLinks.classList.remove('open'); // close mobile nav
+        navLinks.classList.remove('open');
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         history.replaceState(null, '', href);
       }
     });
   });
 
-  // Fade-in animations with IntersectionObserver
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -67,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // Collapsible timeline items
   document.querySelectorAll('.timeline-head').forEach(btn => {
     btn.addEventListener('click', () => {
       const expanded = btn.getAttribute('aria-expanded') === 'true';
@@ -84,34 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Close mobile nav on outside click for accessibility
   document.addEventListener('click', (e) => {
     if (!navLinks || !navToggle) return;
     if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
       navLinks.classList.remove('open');
     }
   });
-
-  // Animate skill bars when skills section is in view
-  const skillBars = document.querySelectorAll('.progress');
-
-  const animateSkills = () => {
-    skillBars.forEach(bar => {
-      const width = bar.getAttribute('data-width');
-      bar.style.width = width;
-    });
-  };
-
-  const skillsSection = document.querySelector('#skills');
-  if (skillsSection) {
-    const skillsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateSkills();
-          skillsObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    skillsObserver.observe(skillsSection);
-  }
 });
