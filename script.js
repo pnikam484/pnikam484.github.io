@@ -1,6 +1,3 @@
-// script.js
-// Dark mode, smooth scroll, fade-in on scroll, mobile nav toggle, collapsible experience
-
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.documentElement;
   const darkToggle = document.getElementById('darkToggle');
@@ -23,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     darkToggle.setAttribute('aria-pressed', 'false');
   }
 
+  // Dark mode toggle
   darkToggle?.addEventListener('click', () => {
     const isDark = root.getAttribute('data-theme') === 'dark';
     if (isDark) {
@@ -43,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinks.classList.toggle('open');
   });
 
-  // Smooth scrolling for all anchor links
+  // Smooth scrolling for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -57,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Fade-in sections using IntersectionObserver
+  // Fade-in animations with IntersectionObserver
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -69,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // Timeline collapsible items
+  // Collapsible timeline items
   document.querySelectorAll('.timeline-head').forEach(btn => {
     btn.addEventListener('click', () => {
       const expanded = btn.getAttribute('aria-expanded') === 'true';
@@ -86,34 +84,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Accessibility: close mobile nav on outside click
+  // Close mobile nav on outside click for accessibility
   document.addEventListener('click', (e) => {
     if (!navLinks || !navToggle) return;
     if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
       navLinks.classList.remove('open');
     }
   });
-// Animate skill bars when they come into view
-const skillBars = document.querySelectorAll('.progress');
 
-const animateSkills = () => {
-  skillBars.forEach(bar => {
-    const width = bar.getAttribute('data-width');
-    bar.style.width = width;
-  });
-};
+  // Animate skill bars when skills section is in view
+  const skillBars = document.querySelectorAll('.progress');
 
-const skillsSection = document.querySelector('#skills');
-if (skillsSection) {
-  const skillsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateSkills();
-        skillsObserver.unobserve(entry.target);
-      }
+  const animateSkills = () => {
+    skillBars.forEach(bar => {
+      const width = bar.getAttribute('data-width');
+      bar.style.width = width;
     });
-  }, { threshold: 0.3 });
-  skillsObserver.observe(skillsSection);
-}
+  };
 
-}); // DOMContentLoaded
+  const skillsSection = document.querySelector('#skills');
+  if (skillsSection) {
+    const skillsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateSkills();
+          skillsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    skillsObserver.observe(skillsSection);
+  }
+});
