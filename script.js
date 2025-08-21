@@ -93,5 +93,27 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.remove('open');
     }
   });
+// Animate skill bars when they come into view
+const skillBars = document.querySelectorAll('.progress');
+
+const animateSkills = () => {
+  skillBars.forEach(bar => {
+    const width = bar.getAttribute('data-width');
+    bar.style.width = width;
+  });
+};
+
+const skillsSection = document.querySelector('#skills');
+if (skillsSection) {
+  const skillsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateSkills();
+        skillsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  skillsObserver.observe(skillsSection);
+}
 
 }); // DOMContentLoaded
