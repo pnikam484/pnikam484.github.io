@@ -372,25 +372,31 @@
                     </div>
                 </div>
 
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <label for="name" class="form-label">Name</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject" class="form-label">Subject</label>
-                        <input type="text" id="subject" name="subject" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
-                </form>
+               <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="d6bfb9b3-0d9f-4e5e-809e-e9fec02b311f">
+    
+    <div class="form-group">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" id="name" name="name" class="form-control" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" id="email" name="email" class="form-control" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="subject" class="form-label">Subject</label>
+        <input type="text" id="subject" name="subject" class="form-control" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="message" class="form-label">Message</label>
+        <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+    </div>
+    
+    <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
+               </form>
             </div>
         </div>
     </section>
