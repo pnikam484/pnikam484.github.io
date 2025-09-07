@@ -10,30 +10,40 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f9fafb;
-            color: #374151;
+            background-color: #1A1A1A; /* Sleek black theme */
+            color: #E2E8F0; /* Light gray text */
         }
         .section-divider {
             height: 2px;
-            background-color: #d1d5db;
+            background-color: #2D3748;
             width: 100%;
             max-width: 800px;
-            margin: 2rem auto;
+            margin: 2.5rem auto;
         }
         .nav-link {
             transition: color 0.2s ease-in-out;
+            color: #CBD5E0;
         }
         .nav-link:hover {
-            color: #06b6d4; /* cyan-500 */
+            color: #3B82F6; /* Professional blue */
         }
         html {
             scroll-behavior: smooth;
         }
 
-        /* Hero Section Gradient */
+        /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, #0e7490 0%, #0d9488 100%);
+            background: linear-gradient(135deg, #2D3748 0%, #1A202C 100%);
             color: white;
+        }
+        .bg-white {
+            background-color: #2D3748;
+        }
+        .shadow-sm {
+            box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+        .shadow-md {
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
         }
 
         /* Animations */
@@ -59,58 +69,61 @@
 
         /* Hover Effects */
         .card-hover {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+            background-color: #2D3748;
         }
         .card-hover:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+            background-color: #3B455A;
         }
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Header & Navigation -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header class="bg-gray-800 shadow-sm sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between">
-            <a href="#" class="text-2xl font-bold text-gray-800">Pravin Nikam</a>
+            <a href="#" class="text-2xl font-bold text-gray-200">Pravin Nikam</a>
             <nav class="mt-4 sm:mt-0">
-                <ul class="flex space-x-4 text-gray-600 font-medium">
+                <ul class="flex space-x-4 text-gray-400 font-medium">
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#skills" class="nav-link">Skills</a></li>
                     <li><a href="#experience" class="nav-link">Experience</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#interview-prep" class="nav-link">AI Prep</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="container mx-auto px-6 py-12">
+    <main class="container mx-auto px-6 py-12 max-w-5xl">
 
-        <!-- Hero Section (formerly About) -->
+        <!-- Hero Section -->
         <section id="about" class="hero-section p-12 rounded-lg shadow-lg mb-8 text-center animate-fadeIn">
-            <div class="mb-4">
-                <img src="https://placehold.co/150x150/d1d5db/4b5563?text=PN" alt="Pravin Nikam's profile photo" class="w-32 h-32 rounded-full mx-auto shadow-md object-cover object-center">
+            <div class="mb-6">
+                <img src="https://placehold.co/150x150/CBD5E0/4B5563?text=PN" alt="Pravin Nikam's profile photo" class="w-32 h-32 rounded-full mx-auto shadow-md object-cover object-center border-4 border-white">
             </div>
             <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Pravin Nikam</h1>
-            <h2 class="text-2xl font-semibold mb-6">Business Analyst & Data Specialist</h2>
+            <h2 class="text-2xl font-semibold mb-6 text-blue-300">Business Analyst & Data Specialist</h2>
             <p class="text-lg max-w-2xl mx-auto leading-relaxed opacity-90">
                 Analytical and solutions-driven Business Analyst with 5+ years of experience delivering data-driven insights, dashboard solutions, and process automation across IT, Banking, and Financial Services. Expert in extracting, modeling, and visualizing large datasets using SQL, Power BI, Tableau, and Excel.
             </p>
-            <a href="#contact" class="mt-8 inline-block bg-white text-teal-700 font-semibold py-3 px-8 rounded-full shadow-md hover:bg-gray-100 transition-all duration-300">Get in Touch</a>
+            <a href="#contact" class="mt-8 inline-block bg-blue-500 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300">Get in Touch</a>
         </section>
 
-        <!-- Divider -->
+        <!-- Section Divider -->
         <div class="section-divider"></div>
 
         <!-- Skills Section -->
         <section id="skills" class="p-8 rounded-lg mb-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Skills</h3>
+            <h3 class="text-3xl font-bold text-gray-200 mb-8 text-center">Core Skills</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Data & Analytics -->
-                <div class="fade-in-on-scroll card-hover p-6 bg-white rounded-lg shadow-md">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-3">Data & Analytics</h4>
-                    <ul class="list-disc list-inside space-y-1 text-gray-600">
+                <div class="fade-in-on-scroll card-hover p-6 rounded-lg shadow-md">
+                    <h4 class="text-xl font-semibold text-gray-200 mb-3">Data & Analytics</h4>
+                    <ul class="list-disc list-inside space-y-1 text-gray-400">
                         <li>SQL, Power BI, Tableau</li>
                         <li>Advanced Excel (VBA, Pivot Tables, Power Pivot)</li>
                         <li>Data Modeling, Data Analysis, ETL Processes</li>
@@ -118,9 +131,9 @@
                     </ul>
                 </div>
                 <!-- Business & Project Management -->
-                <div class="fade-in-on-scroll card-hover p-6 bg-white rounded-lg shadow-md">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-3">Business & Project Management</h4>
-                    <ul class="list-disc list-inside space-y-1 text-gray-600">
+                <div class="fade-in-on-scroll card-hover p-6 rounded-lg shadow-md">
+                    <h4 class="text-xl font-semibold text-gray-200 mb-3">Business & Project Management</h4>
+                    <ul class="list-disc list-inside space-y-1 text-gray-400">
                         <li>Agile, SDLC, UAT</li>
                         <li>Stakeholder Management</li>
                         <li>Requirements Gathering</li>
@@ -129,9 +142,9 @@
                     </ul>
                 </div>
                 <!-- Tools -->
-                <div class="fade-in-on-scroll card-hover p-6 bg-white rounded-lg shadow-md">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-3">Tools</h4>
-                    <ul class="list-disc list-inside space-y-1 text-gray-600">
+                <div class="fade-in-on-scroll card-hover p-6 rounded-lg shadow-md">
+                    <h4 class="text-xl font-semibold text-gray-200 mb-3">Tools</h4>
+                    <ul class="list-disc list-inside space-y-1 text-gray-400">
                         <li>IBM InfoSphere DataStage, Python</li>
                         <li>Google Analytics, Jira</li>
                         <li>SalesGo, FinnOne LOS, CRM</li>
@@ -140,120 +153,156 @@
             </div>
         </section>
 
-        <!-- Divider -->
+        <!-- Section Divider -->
         <div class="section-divider"></div>
 
         <!-- Experience Section -->
         <section id="experience" class="p-8 rounded-lg mb-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Professional Experience</h3>
+            <h3 class="text-3xl font-bold text-gray-200 mb-8 text-center">Professional Experience</h3>
             
             <!-- Cognizant -->
-            <div class="fade-in-on-scroll mb-6 p-6 bg-white rounded-lg shadow-md">
-                <h4 class="text-xl font-semibold text-gray-800">Business Analyst – Associate, Cognizant Technology Solutions</h4>
-                <p class="text-gray-500 text-sm mt-1 mb-3">Pune, India | May 2023 – Present</p>
-                <ul class="list-disc list-outside space-y-2 text-gray-700 pl-5">
-                    <li>Designed and deployed automated Power BI dashboards and reports for healthcare delivery, enabling 200+ users to access key performance metrics and identify process bottlenecks, resulting in a <strong>15% improvement in SLA compliance</strong>.</li>
-                    <li>Developed SQL-based data extraction workflows for an Enterprise Data Warehouse (EDWH), <strong>reducing reporting timelines by 30%</strong> and enabling real-time stakeholder insights for global teams.</li>
-                    <li>Partnered with engineering and business stakeholders to lead User Acceptance Testing (UAT) and go-live, ensuring <strong>99% bug-free deployments</strong> for client analytics solutions.</li>
-                    <li>Implemented pipeline monitoring dashboards for ETL systems, <strong>decreasing data quality incidents by 25%</strong> through proactive issue identification.</li>
+            <div class="fade-in-on-scroll mb-8 p-6 rounded-lg shadow-md card-hover">
+                <h4 class="text-2xl font-semibold text-gray-200">Business Analyst – Associate, Cognizant Technology Solutions</h4>
+                <p class="text-gray-400 text-sm mt-1 mb-4">Pune, India | May 2023 – Present</p>
+                <ul class="list-disc list-outside space-y-2 text-gray-400 pl-5">
+                    <li>Designed and deployed automated Power BI dashboards and reports for healthcare delivery, enabling 200+ users to access key performance metrics and identify process bottlenecks, resulting in a **15% improvement in SLA compliance**.</li>
+                    <li>Developed SQL-based data extraction workflows for an Enterprise Data Warehouse (EDWH), **reducing reporting timelines by 30%** and enabling real-time stakeholder insights for global teams.</li>
+                    <li>Partnered with engineering and business stakeholders to lead User Acceptance Testing (UAT) and go-live, ensuring **99% bug-free deployments** for client analytics solutions.</li>
+                    <li>Implemented pipeline monitoring dashboards for ETL systems, **decreasing data quality incidents by 25%** through proactive issue identification.</li>
                 </ul>
             </div>
 
             <!-- Electronica Finance -->
-            <div class="fade-in-on-scroll mb-6 p-6 bg-white rounded-lg shadow-md">
-                <h4 class="text-xl font-semibold text-gray-800">Assistant Manager – Business Analytics, Electronica Finance Limited</h4>
-                <p class="text-gray-500 text-sm mt-1 mb-3">Pune, India | Feb 2022 – Apr 2023</p>
-                <ul class="list-disc list-outside space-y-2 text-gray-700 pl-5">
+            <div class="fade-in-on-scroll mb-8 p-6 rounded-lg shadow-md card-hover">
+                <h4 class="text-2xl font-semibold text-gray-200">Assistant Manager – Business Analytics, Electronica Finance Limited</h4>
+                <p class="text-gray-400 text-sm mt-1 mb-4">Pune, India | Feb 2022 – Apr 2023</p>
+                <ul class="list-disc list-outside space-y-2 text-gray-400 pl-5">
                     <li>Built and maintained operational and executive dashboards in Tableau and Excel, expediting decision cycles for credit operations and sales.</li>
-                    <li>Conducted in-depth data analyses and collaborated with IT/product units to optimize CRM and LOS integrations, <strong>boosting customer onboarding efficiency by 18%</strong>.</li>
-                    <li>Led change management workshops, gathering requirements and mapping process improvements that <strong>reduced manual reporting work by 40%</strong>.</li>
+                    <li>Conducted in-depth data analyses and collaborated with IT/product units to optimize CRM and LOS integrations, **boosting customer onboarding efficiency by 18%**.</li>
+                    <li>Led change management workshops, gathering requirements and mapping process improvements that **reduced manual reporting work by 40%**.</li>
                 </ul>
             </div>
 
             <!-- IDFC First Bank -->
-            <div class="fade-in-on-scroll mb-6 p-6 bg-white rounded-lg shadow-md">
-                <h4 class="text-xl font-semibold text-gray-800">Officer Executive – MIS & Analytics, IDFC First Bank Limited</h4>
-                <p class="text-gray-500 text-sm mt-1 mb-3">Pune, India | Apr 2021 – Jan 2022</p>
-                <ul class="list-disc list-outside space-y-2 text-gray-700 pl-5">
-                    <li>Developed advanced Excel (Power Query, Pivot Tables) and SQL-based reporting for lending operations, driving a <strong>20% drop in overdue follow-ups</strong>.</li>
+            <div class="fade-in-on-scroll mb-8 p-6 rounded-lg shadow-md card-hover">
+                <h4 class="text-2xl font-semibold text-gray-200">Officer Executive – MIS & Analytics, IDFC First Bank Limited</h4>
+                <p class="text-gray-400 text-sm mt-1 mb-4">Pune, India | Apr 2021 – Jan 2022</p>
+                <ul class="list-disc list-outside space-y-2 text-gray-400 pl-5">
+                    <li>Developed advanced Excel (Power Query, Pivot Tables) and SQL-based reporting for lending operations, driving a **20% drop in overdue follow-ups**.</li>
                     <li>Automated market research reports and generated insights adopted by senior leadership for quarterly strategy reviews.</li>
                 </ul>
             </div>
 
             <!-- TSM CAPITAL -->
-            <div class="fade-in-on-scroll mb-6 p-6 bg-white rounded-lg shadow-md">
-                <h4 class="text-xl font-semibold text-gray-800">MIS Executive, TSM CAPITAL</h4>
-                <p class="text-gray-500 text-sm mt-1 mb-3">Solapur, India | Dec 2019 – Apr 2021</p>
-                <ul class="list-disc list-outside space-y-2 text-gray-700 pl-5">
+            <div class="fade-in-on-scroll mb-8 p-6 rounded-lg shadow-md card-hover">
+                <h4 class="text-2xl font-semibold text-gray-200">MIS Executive, TSM CAPITAL</h4>
+                <p class="text-gray-400 text-sm mt-1 mb-4">Solapur, India | Dec 2019 – Apr 2021</p>
+                <ul class="list-disc list-outside space-y-2 text-gray-400 pl-5">
                     <li>Designed KPI dashboards and reporting pipelines, improving delivery timelines and data accuracy, supporting business leadership decisions.</li>
                 </ul>
             </div>
 
             <!-- CaliberHR -->
-            <div class="fade-in-on-scroll mb-6 p-6 bg-white rounded-lg shadow-md">
-                <h4 class="text-xl font-semibold text-gray-800">Executive – Customer Analytics, CaliberHR</h4>
-                <p class="text-gray-500 text-sm mt-1 mb-3">Pune, India | Jan 2018 – Nov 2019</p>
-                <ul class="list-disc list-outside space-y-2 text-gray-700 pl-5">
+            <div class="fade-in-on-scroll mb-8 p-6 rounded-lg shadow-md card-hover">
+                <h4 class="text-2xl font-semibold text-gray-200">Executive – Customer Analytics, CaliberHR</h4>
+                <p class="text-gray-400 text-sm mt-1 mb-4">Pune, India | Jan 2018 – Nov 2019</p>
+                <ul class="list-disc list-outside space-y-2 text-gray-400 pl-5">
                     <li>Built Excel-driven workflow and customer segmentation reports, streamlining operational support and enabling targeted customer engagement initiatives.</li>
                 </ul>
             </div>
         </section>
 
-        <!-- Divider -->
+        <!-- Section Divider -->
         <div class="section-divider"></div>
 
         <!-- Projects Section -->
         <section id="projects" class="p-8 rounded-lg mb-8">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Projects</h3>
+            <h3 class="text-3xl font-bold text-gray-200 mb-8 text-center">Projects</h3>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- ETL Healthcare Analytics -->
-                <div class="fade-in-on-scroll card-hover p-6 bg-white rounded-lg shadow-md">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-2">ETL Healthcare Analytics</h4>
-                    <p class="text-sm text-gray-600">Automated SFG/SOP processes using Infosphere DataStage; implemented pipeline monitoring to ensure operational efficiency and compliance.</p>
+                <div class="fade-in-on-scroll card-hover p-6 rounded-lg shadow-md">
+                    <h4 class="text-lg font-semibold text-gray-200 mb-2">ETL Healthcare Analytics</h4>
+                    <p class="text-sm text-gray-400">Automated SFG/SOP processes using Infosphere DataStage; implemented pipeline monitoring to ensure operational efficiency and compliance.</p>
                 </div>
                 <!-- CRM–LOS Integration -->
-                <div class="fade-in-on-scroll card-hover p-6 bg-white rounded-lg shadow-md">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-2">CRM–LOS Integration</h4>
-                    <p class="text-sm text-gray-600">Integrated SalesGo CRM with FinnOne LOS, enabling end-to-end user data flows and improving customer experience through process automation.</p>
+                <div class="fade-in-on-scroll card-hover p-6 rounded-lg shadow-md">
+                    <h4 class="text-lg font-semibold text-gray-200 mb-2">CRM–LOS Integration</h4>
+                    <p class="text-sm text-gray-400">Integrated SalesGo CRM with FinnOne LOS, enabling end-to-end user data flows and improving customer experience through process automation.</p>
                 </div>
                 <!-- Banking Analytics -->
-                <div class="fade-in-on-scroll card-hover p-6 bg-white rounded-lg shadow-md">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Banking Analytics</h4>
-                    <p class="text-sm text-gray-600">Developed risk & compliance dashboards, providing business leaders with real-time monitoring for data protection and reliability.</p>
+                <div class="fade-in-on-scroll card-hover p-6 rounded-lg shadow-md">
+                    <h4 class="text-lg font-semibold text-gray-200 mb-2">Banking Analytics</h4>
+                    <p class="text-sm text-gray-400">Developed risk & compliance dashboards, providing business leaders with real-time monitoring for data protection and reliability.</p>
                 </div>
                 <!-- Personal Portfolio Website -->
-                <div class="fade-in-on-scroll card-hover p-6 bg-white rounded-lg shadow-md">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Personal Portfolio Website</h4>
-                    <p class="text-sm text-gray-600">Designed and developed a responsive portfolio website to showcase skills, certifications, and projects, enhancing personal branding and networking.</p>
+                <div class="fade-in-on-scroll card-hover p-6 rounded-lg shadow-md">
+                    <h4 class="text-lg font-semibold text-gray-200 mb-2">Personal Portfolio Website</h4>
+                    <p class="text-sm text-gray-400">Designed and developed a responsive portfolio website to showcase skills, certifications, and projects, enhancing personal branding and networking.</p>
                 </div>
                 <!-- AI Knowledge Management System -->
-                <div class="fade-in-on-scroll card-hover p-6 bg-white rounded-lg shadow-md">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-2">AI Knowledge Management System</h4>
-                    <p class="text-sm text-gray-600">Developed an AI-powered system to organize and document AI models and tools; created user-friendly documentation and manuals to support adoption by technical and non-technical stakeholders.</p>
+                <div class="fade-in-on-scroll card-hover p-6 rounded-lg shadow-md">
+                    <h4 class="text-lg font-semibold text-gray-200 mb-2">AI Knowledge Management System</h4>
+                    <p class="text-sm text-gray-400">Developed an AI-powered system to organize and document AI models and tools; created user-friendly documentation and manuals to support adoption by technical and non-technical stakeholders.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Divider -->
+        <!-- Section Divider -->
+        <div class="section-divider"></div>
+
+        <!-- AI Interview Prep Section -->
+        <section id="interview-prep" class="p-8 rounded-lg mb-8 bg-gray-800 shadow-md">
+            <h3 class="text-3xl font-bold text-gray-200 mb-6 text-center">AI Interview Prep ✨</h3>
+            <p class="text-gray-400 text-center mb-6 max-w-2xl mx-auto">Select one of my projects to get a list of common interview questions, generated by Gemini AI.</p>
+            
+            <div class="max-w-xl mx-auto space-y-4">
+                <select id="projectSelect" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-gray-200 focus:outline-none focus:border-blue-500">
+                    <option value="" disabled selected>Select a Project</option>
+                    <option value="ETL Healthcare Analytics">ETL Healthcare Analytics</option>
+                    <option value="CRM–LOS Integration">CRM–LOS Integration</option>
+                    <option value="Banking Analytics">Banking Analytics</option>
+                    <option value="Personal Portfolio Website">Personal Portfolio Website</option>
+                    <option value="AI Knowledge Management System">AI Knowledge Management System</option>
+                </select>
+
+                <button id="generateBtn" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                    Generate Questions ✨
+                </button>
+            </div>
+
+            <div id="loadingIndicator" class="mt-8 text-center text-gray-400 hidden">
+                <svg class="animate-spin h-8 w-8 text-blue-500 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <p class="mt-2">Generating questions...</p>
+            </div>
+
+            <div id="questionsContainer" class="mt-8 p-6 rounded-lg bg-gray-700 shadow-md hidden">
+                <!-- Questions will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <!-- Section Divider -->
         <div class="section-divider"></div>
 
         <!-- Education & Certifications Section -->
-        <section id="education" class="p-8 rounded-lg mb-8 bg-white shadow-md">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Education & Certifications</h3>
+        <section id="education" class="p-8 rounded-lg mb-8 bg-gray-800 shadow-md">
+            <h3 class="text-3xl font-bold text-gray-200 mb-8 text-center">Education & Certifications</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Education -->
-                <div class="p-6 bg-gray-50 rounded-lg shadow-sm fade-in-on-scroll card-hover">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Education</h4>
-                    <ul class="list-disc list-outside space-y-1 text-gray-600 pl-5">
+                <div class="p-6 bg-gray-700 rounded-lg shadow-sm fade-in-on-scroll card-hover">
+                    <h4 class="text-xl font-semibold text-gray-200 mb-2">Education</h4>
+                    <ul class="list-disc list-outside space-y-1 text-gray-400 pl-5">
                         <li><strong>MBA, Business Analytics</strong> – Zeal Education Society, Pune (2022)</li>
                         <li><strong>Bachelor’s in Computer Application</strong> – Green Fingers College, Solapur (2020)</li>
                     </ul>
                 </div>
                 <!-- Certifications -->
-                <div class="p-6 bg-gray-50 rounded-lg shadow-sm fade-in-on-scroll card-hover">
-                    <h4 class="text-lg font-semibold text-gray-800 mb-2">Certifications</h4>
-                    <ul class="list-disc list-outside space-y-1 text-gray-600 pl-5">
+                <div class="p-6 bg-gray-700 rounded-lg shadow-sm fade-in-on-scroll card-hover">
+                    <h4 class="text-xl font-semibold text-gray-200 mb-2">Certifications</h4>
+                    <ul class="list-disc list-outside space-y-1 text-gray-400 pl-5">
                         <li>Microsoft Power BI, Microsoft (2025)</li>
                         <li>Intermediate SQL, HackerRank (2024)</li>
                         <li>Data Analysis with R, Coursera (2023)</li>
@@ -263,20 +312,23 @@
             </div>
         </section>
 
+        <!-- Section Divider -->
+        <div class="section-divider"></div>
+
         <!-- Contact Section -->
-        <section id="contact" class="p-8 rounded-lg mb-8 bg-white shadow-md text-center fade-in-on-scroll">
-            <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact</h3>
-            <p class="text-gray-700 mb-4">Feel free to reach out for collaboration or to discuss new opportunities.</p>
+        <section id="contact" class="p-8 rounded-lg mb-8 bg-gray-800 shadow-md text-center fade-in-on-scroll">
+            <h3 class="text-3xl font-bold text-gray-200 mb-6">Contact</h3>
+            <p class="text-gray-400 mb-4">Feel free to reach out for collaboration or to discuss new opportunities.</p>
             <div class="space-y-2 md:space-y-0 md:space-x-4 flex flex-col md:flex-row justify-center">
-                <a href="mailto:pravin4u484@gmail.com" class="bg-gray-800 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-700 transition-colors duration-300">Email Me</a>
-                <a href="https://www.linkedin.com/in/pravinnikam/" target="_blank" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-500 transition-colors duration-300">Connect on LinkedIn</a>
+                <a href="mailto:pravin4u484@gmail.com" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-500 transition-colors duration-300">Email Me</a>
+                <a href="https://www.linkedin.com/in/pravinsnikam/" target="_blank" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-500 transition-colors duration-300">Connect on LinkedIn</a>
             </div>
         </section>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-300 py-6">
+    <footer class="bg-gray-900 text-gray-400 py-6">
         <div class="container mx-auto px-6 text-center text-sm">
             <p>&copy; 2024 Pravin Nikam. All rights reserved.</p>
             <p class="mt-2">
@@ -293,16 +345,94 @@
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
-                // Optional: Stop observing after it becomes visible
                 observer.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.1 // Triggers when 10% of the element is visible
+        threshold: 0.1
     });
 
     document.querySelectorAll('.fade-in-on-scroll').forEach(section => {
         observer.observe(section);
+    });
+
+    // Gemini API Integration for Interview Prep
+    document.addEventListener('DOMContentLoaded', () => {
+        const generateBtn = document.getElementById('generateBtn');
+        const projectSelect = document.getElementById('projectSelect');
+        const questionsContainer = document.getElementById('questionsContainer');
+        const loadingIndicator = document.getElementById('loadingIndicator');
+
+        const projectDescriptions = {
+            "ETL Healthcare Analytics": "Automated SFG/SOP processes using Infosphere DataStage; implemented pipeline monitoring to ensure operational efficiency and compliance.",
+            "CRM–LOS Integration": "Integrated SalesGo CRM with FinnOne LOS, enabling end-to-end user data flows and improving customer experience through process automation.",
+            "Banking Analytics": "Developed risk & compliance dashboards, providing business leaders with real-time monitoring for data protection and reliability.",
+            "Personal Portfolio Website": "Designed and developed a responsive portfolio website to showcase skills, certifications, and projects, enhancing personal branding and networking.",
+            "AI Knowledge Management System": "Developed an AI-powered system to organize and document AI models and tools; created user-friendly documentation and manuals to support adoption by technical and non-technical stakeholders."
+        };
+
+        generateBtn.addEventListener('click', async () => {
+            const selectedProjectTitle = projectSelect.value;
+            if (!selectedProjectTitle) {
+                questionsContainer.innerHTML = '<p class="text-red-400">Please select a project.</p>';
+                questionsContainer.classList.remove('hidden');
+                return;
+            }
+
+            const projectDescription = projectDescriptions[selectedProjectTitle];
+
+            // Show loading state
+            questionsContainer.classList.add('hidden');
+            loadingIndicator.classList.remove('hidden');
+            
+            try {
+                const prompt = `Act as a technical interviewer. Based on the following project description, generate 5-7 insightful interview questions. Focus on the candidate's role, challenges, and outcomes.
+                
+                Project: ${selectedProjectTitle}
+                Description: ${projectDescription}
+                
+                Please format the response as a list of questions.`;
+
+                const apiKey = ""; 
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                const payload = {
+                    contents: [{ parts: [{ text: prompt }] }],
+                    tools: [{ "google_search": {} }],
+                };
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`API call failed with status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                const text = result?.candidates?.[0]?.content?.parts?.[0]?.text || "No questions could be generated. Please try again.";
+
+                // Format the text into an HTML list
+                const formattedQuestions = text.split('\n').map(q => q.trim()).filter(q => q.length > 0).map(q => `<li class="mb-2">${q}</li>`).join('');
+
+                questionsContainer.innerHTML = `
+                    <h4 class="text-xl font-bold text-white mb-4">Potential Interview Questions:</h4>
+                    <ul class="list-disc list-outside text-gray-300 pl-5">
+                        ${formattedQuestions}
+                    </ul>
+                `;
+
+            } catch (error) {
+                console.error('Error generating questions:', error);
+                questionsContainer.innerHTML = '<p class="text-red-400">An error occurred while generating questions. Please try again later.</p>';
+            } finally {
+                // Hide loading state and show results
+                loadingIndicator.classList.add('hidden');
+                questionsContainer.classList.remove('hidden');
+            }
+        });
     });
 </script>
 
