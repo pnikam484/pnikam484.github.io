@@ -77,6 +77,20 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
             background-color: #3B455A;
         }
+
+        /* Modal Animations */
+        .modal-enter-active, .modal-leave-active {
+            transition: opacity 0.3s ease;
+        }
+        .modal-enter-from, .modal-leave-to {
+            opacity: 0;
+        }
+        .modal-content-enter-active, .modal-content-leave-active {
+            transition: transform 0.3s ease-in-out;
+        }
+        .modal-content-enter-from, .modal-content-leave-to {
+            transform: translateY(20px);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -91,7 +105,7 @@
                     <li><a href="#skills" class="nav-link">Skills</a></li>
                     <li><a href="#experience" class="nav-link">Experience</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#interview-prep" class="nav-link">AI Prep</a></li>
+                    <li><a href="#" id="aiAssistantLink" class="nav-link">AI Assistant</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
@@ -165,10 +179,10 @@
                 <h4 class="text-2xl font-semibold text-gray-200">Business Analyst – Associate, Cognizant Technology Solutions</h4>
                 <p class="text-gray-400 text-sm mt-1 mb-4">Pune, India | May 2023 – Present</p>
                 <ul class="list-disc list-outside space-y-2 text-gray-400 pl-5">
-                    <li>Designed and deployed automated Power BI dashboards and reports for healthcare delivery, enabling 200+ users to access key performance metrics and identify process bottlenecks, resulting in a **15% improvement in SLA compliance**.</li>
-                    <li>Developed SQL-based data extraction workflows for an Enterprise Data Warehouse (EDWH), **reducing reporting timelines by 30%** and enabling real-time stakeholder insights for global teams.</li>
-                    <li>Partnered with engineering and business stakeholders to lead User Acceptance Testing (UAT) and go-live, ensuring **99% bug-free deployments** for client analytics solutions.</li>
-                    <li>Implemented pipeline monitoring dashboards for ETL systems, **decreasing data quality incidents by 25%** through proactive issue identification.</li>
+                    <li>Designed and deployed automated Power BI dashboards and reports for healthcare delivery, enabling 200+ users to access key performance metrics and identify process bottlenecks, resulting in a <strong>15% improvement in SLA compliance</strong>.</li>
+                    <li>Developed SQL-based data extraction workflows for an Enterprise Data Warehouse (EDWH), <strong>reducing reporting timelines by 30%</strong> and enabling real-time stakeholder insights for global teams.</li>
+                    <li>Partnered with engineering and business stakeholders to lead User Acceptance Testing (UAT) and go-live, ensuring <strong>99% bug-free deployments</strong> for client analytics solutions.</li>
+                    <li>Implemented pipeline monitoring dashboards for ETL systems, <strong>decreasing data quality incidents by 25%</strong> through proactive issue identification.</li>
                 </ul>
             </div>
 
@@ -178,8 +192,8 @@
                 <p class="text-gray-400 text-sm mt-1 mb-4">Pune, India | Feb 2022 – Apr 2023</p>
                 <ul class="list-disc list-outside space-y-2 text-gray-400 pl-5">
                     <li>Built and maintained operational and executive dashboards in Tableau and Excel, expediting decision cycles for credit operations and sales.</li>
-                    <li>Conducted in-depth data analyses and collaborated with IT/product units to optimize CRM and LOS integrations, **boosting customer onboarding efficiency by 18%**.</li>
-                    <li>Led change management workshops, gathering requirements and mapping process improvements that **reduced manual reporting work by 40%**.</li>
+                    <li>Conducted in-depth data analyses and collaborated with IT/product units to optimize CRM and LOS integrations, <strong>boosting customer onboarding efficiency by 18%</strong>.</li>
+                    <li>Led change management workshops, gathering requirements and mapping process improvements that <strong>reduced manual reporting work by 40%</strong>.</li>
                 </ul>
             </div>
 
@@ -188,7 +202,7 @@
                 <h4 class="text-2xl font-semibold text-gray-200">Officer Executive – MIS & Analytics, IDFC First Bank Limited</h4>
                 <p class="text-gray-400 text-sm mt-1 mb-4">Pune, India | Apr 2021 – Jan 2022</p>
                 <ul class="list-disc list-outside space-y-2 text-gray-400 pl-5">
-                    <li>Developed advanced Excel (Power Query, Pivot Tables) and SQL-based reporting for lending operations, driving a **20% drop in overdue follow-ups**.</li>
+                    <li>Developed advanced Excel (Power Query, Pivot Tables) and SQL-based reporting for lending operations, driving a <strong>20% drop in overdue follow-ups</strong>.</li>
                     <li>Automated market research reports and generated insights adopted by senior leadership for quarterly strategy reviews.</li>
                 </ul>
             </div>
@@ -251,42 +265,6 @@
         <!-- Section Divider -->
         <div class="section-divider"></div>
 
-        <!-- AI Interview Prep Section -->
-        <section id="interview-prep" class="p-8 rounded-lg mb-8 bg-gray-800 shadow-md">
-            <h3 class="text-3xl font-bold text-gray-200 mb-6 text-center">AI Interview Prep ✨</h3>
-            <p class="text-gray-400 text-center mb-6 max-w-2xl mx-auto">Select one of my projects to get a list of common interview questions, generated by Gemini AI.</p>
-            
-            <div class="max-w-xl mx-auto space-y-4">
-                <select id="projectSelect" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-gray-200 focus:outline-none focus:border-blue-500">
-                    <option value="" disabled selected>Select a Project</option>
-                    <option value="ETL Healthcare Analytics">ETL Healthcare Analytics</option>
-                    <option value="CRM–LOS Integration">CRM–LOS Integration</option>
-                    <option value="Banking Analytics">Banking Analytics</option>
-                    <option value="Personal Portfolio Website">Personal Portfolio Website</option>
-                    <option value="AI Knowledge Management System">AI Knowledge Management System</option>
-                </select>
-
-                <button id="generateBtn" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg shadow-lg hover:bg-blue-500 transition-colors duration-300">
-                    Generate Questions ✨
-                </button>
-            </div>
-
-            <div id="loadingIndicator" class="mt-8 text-center text-gray-400 hidden">
-                <svg class="animate-spin h-8 w-8 text-blue-500 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                <p class="mt-2">Generating questions...</p>
-            </div>
-
-            <div id="questionsContainer" class="mt-8 p-6 rounded-lg bg-gray-700 shadow-md hidden">
-                <!-- Questions will be dynamically inserted here -->
-            </div>
-        </section>
-
-        <!-- Section Divider -->
-        <div class="section-divider"></div>
-
         <!-- Education & Certifications Section -->
         <section id="education" class="p-8 rounded-lg mb-8 bg-gray-800 shadow-md">
             <h3 class="text-3xl font-bold text-gray-200 mb-8 text-center">Education & Certifications</h3>
@@ -339,7 +317,108 @@
         </div>
     </footer>
 
+    <!-- AI Assistant Floating Button -->
+    <button id="openAssistantBtn" class="fixed bottom-6 right-6 p-4 rounded-full bg-blue-600 text-white text-2xl shadow-lg hover:bg-blue-500 transition-all duration-300 z-50">
+        ✨
+    </button>
+
+    <!-- AI Assistant Modal -->
+    <div id="aiAssistantModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-50 transition-opacity duration-300">
+        <div id="modalContent" class="bg-gray-800 p-8 rounded-lg shadow-2xl max-w-2xl w-full relative transition-transform duration-300">
+            <button id="closeAssistantBtn" class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl">&times;</button>
+            
+            <h3 class="text-3xl font-bold text-gray-200 mb-6 text-center">AI Profile Assistant ✨</h3>
+            <p class="text-gray-400 text-center mb-6 max-w-2xl mx-auto">Ask me a question about my professional background or compare my profile to a job description.</p>
+            
+            <!-- Question & Answer -->
+            <div class="max-w-xl mx-auto space-y-4 mb-8">
+                <input type="text" id="userQuestion" placeholder="e.g., Is Pravin experienced in ETL?" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-gray-200 focus:outline-none focus:border-blue-500">
+                <button id="askBtn" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                    Ask a Question
+                </button>
+            </div>
+
+            <!-- JD Comparison -->
+            <div class="max-w-xl mx-auto space-y-4">
+                <input type="url" id="jdUrl" placeholder="Paste a Job Description URL" class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 text-gray-200 focus:outline-none focus:border-blue-500">
+                <button id="compareBtn" class="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg shadow-lg hover:bg-blue-500 transition-colors duration-300">
+                    Compare to JD
+                </button>
+            </div>
+
+            <div id="loadingIndicator" class="mt-8 text-center text-gray-400 hidden">
+                <svg class="animate-spin h-8 w-8 text-blue-500 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <p class="mt-2">Generating response...</p>
+            </div>
+
+            <div id="responseContainer" class="mt-8 p-6 rounded-lg bg-gray-700 shadow-md hidden">
+                <!-- AI responses will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
+
 <script>
+    const resumeContent = `
+        Pravin Nikam
+        Pune, Maharashtra, India | +91 8999435772 | pravin4u484@gmail.com
+        https://www.linkedin.com/in/pravinsnikam/ | https://pnikam484.github.io/
+
+        Professional Summary
+        Analytical and solutions-driven Business Analyst with 5+ years of experience delivering data-driven insights, dashboard solutions, and process automation across IT, Banking, and Financial Services. Expert in extracting, modelling, and visualizing large datasets using SQL, Power BI, Tableau, and Excel. Proven track record of driving operational efficiency, reducing reporting timelines, and enabling strategic decision-making through actionable business intelligence. Seeking to support business growth at a product-driven organization through end-to-end analytics solutions and stakeholder partnership.
+
+        Skills
+        Data & Analytics: SQL, Power BI, Tableau, Advanced Excel (VBA, Pivot Tables, Power Pivot), Data Modelling, Data Analysis, ETL Processes, Metadata Modelling, Data Pipeline Monitoring, Automation
+        Business & Project Management: Agile, SDLC, UAT, Stakeholder Management, Requirements Gathering, Business Intelligence, Project Coordination, Gap Analysis, Risk Mitigation
+        Tools: IBM Infosphere DataStage, Python, Google Analytics, Jira, Sales Go, Finn One LOS, CRM
+
+        Professional Experience
+        Business Analyst – Associate, Cognizant Technology Solutions | Pune, India | May 2023 – Present
+        - Designed and deployed automated Power BI dashboards and reports for healthcare delivery, enabling 200+ users to access key performance metrics and identify process bottlenecks, resulting in a 15% improvement in SLA compliance.
+        - Developed SQL-based data extraction workflows for an Enterprise Data Warehouse (EDWH), reducing reporting timelines by 30% and enabling real-time stakeholder insights for global teams.
+        - Partnered with engineering and business stakeholders to lead User Acceptance Testing (UAT) and go-live, ensuring 99% bug-free deployments for client analytics solutions.
+        - Implemented pipeline monitoring dashboards for ETL systems, decreasing data quality incidents by 25% through proactive issue identification.
+
+        Assistant Manager – Business Analytics, Electronica Finance Limited | Pune, India | Feb 2022 – Apr 2023
+        - Built and maintained operational and executive dashboards in Tableau and Excel, expediting decision cycles for credit operations and sales.
+        - Conducted in-depth data analyses and collaborated with IT/product units to optimize CRM and LOS integrations, boosting customer onboarding efficiency by 18%.
+        - Led change management workshops, gathering requirements and mapping process improvements that reduced manual reporting work by 40%.
+
+        Officer Executive – MIS & Analytics, IDFC First Bank Limited | Pune, India | Apr 2021 – Jan 2022
+        - Developed advanced Excel (Power Query, Pivot Tables) and SQL-based reporting for lending operations, driving a 20% drop in overdue follow-ups.
+        - Automated market research reports and generated insights adopted by senior leadership for quarterly strategy reviews.
+
+        MIS Executive, TSM CAPITAL | Solapur, India | Dec 2019 – Apr 2021
+        - Designed KPI dashboards and reporting pipelines, improving delivery timelines and data accuracy, supporting business leadership decisions.
+
+        Executive – Customer Analytics, Caliber HR | Pune, India | Jan 2018 – Nov 2019
+        - Built Excel-driven workflow and customer segmentation reports, streamlining operational support and enabling targeted customer engagement initiatives.
+
+        Projects
+        - ETL Healthcare Analytics: Automated SFG/SOP processes using Infosphere DataStage; implemented pipeline monitoring to ensure operational efficiency and compliance.
+        - CRM–LOS Integration: Integrated Sales Go CRM with Finn One LOS, enabling end-to-end user data flows and improving customer experience through process automation.
+        - Banking Analytics: Developed risk & compliance dashboards, providing business leaders with real-time monitoring for data protection and reliability.
+        - Personal Portfolio Website: Designed and developed a responsive portfolio website to showcase skills, certifications, and projects, enhancing personal branding and networking.
+        - AI Knowledge Management System: Developed an AI-powered system to organize and document AI models and tools; created user-friendly documentation and manuals to support adoption by technical and non-technical stakeholders.
+
+        Education & Certifications
+        - MBA, Business Analytics – Zeal Education Society, Pune (2022)
+        - Bachelors in Computer Application – Green Fingers College, Solapur (2020)
+        - Microsoft Power BI, Microsoft (2025)
+        - Intermediate SQL, Hacker Rank (2024)
+        - Data Analysis with R, Coursera (2023)
+        - Agile Methodologies, Cognizant (2023)
+        
+        Achievements
+        - Led Cognizant Agile Methodologies Virtual Experience program; streamlined agile project delivery.
+        - Consistently recognized for competitive analysis delivery and data-driven process improvements.
+
+        Languages
+        English (Fluent), Hindi, Marathi
+    `;
+
     // JavaScript for fade-in-on-scroll animation
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -356,49 +435,81 @@
         observer.observe(section);
     });
 
-    // Gemini API Integration for Interview Prep
+    // Gemini API Integration and Modal Control
     document.addEventListener('DOMContentLoaded', () => {
-        const generateBtn = document.getElementById('generateBtn');
-        const projectSelect = document.getElementById('projectSelect');
-        const questionsContainer = document.getElementById('questionsContainer');
+        const openAssistantBtn = document.getElementById('openAssistantBtn');
+        const closeAssistantBtn = document.getElementById('closeAssistantBtn');
+        const aiAssistantModal = document.getElementById('aiAssistantModal');
+        const modalContent = document.getElementById('modalContent');
+        const aiAssistantLink = document.getElementById('aiAssistantLink');
+
+        const askBtn = document.getElementById('askBtn');
+        const compareBtn = document.getElementById('compareBtn');
+        const userQuestion = document.getElementById('userQuestion');
+        const jdUrlInput = document.getElementById('jdUrl');
+        const responseContainer = document.getElementById('responseContainer');
         const loadingIndicator = document.getElementById('loadingIndicator');
 
-        const projectDescriptions = {
-            "ETL Healthcare Analytics": "Automated SFG/SOP processes using Infosphere DataStage; implemented pipeline monitoring to ensure operational efficiency and compliance.",
-            "CRM–LOS Integration": "Integrated SalesGo CRM with FinnOne LOS, enabling end-to-end user data flows and improving customer experience through process automation.",
-            "Banking Analytics": "Developed risk & compliance dashboards, providing business leaders with real-time monitoring for data protection and reliability.",
-            "Personal Portfolio Website": "Designed and developed a responsive portfolio website to showcase skills, certifications, and projects, enhancing personal branding and networking.",
-            "AI Knowledge Management System": "Developed an AI-powered system to organize and document AI models and tools; created user-friendly documentation and manuals to support adoption by technical and non-technical stakeholders."
+        // Show/Hide Modal
+        const showModal = () => {
+            aiAssistantModal.classList.remove('hidden');
+            setTimeout(() => {
+                aiAssistantModal.classList.add('modal-enter-active');
+                modalContent.classList.add('modal-content-enter-active');
+            }, 10);
+        };
+        
+        const hideModal = () => {
+            aiAssistantModal.classList.remove('modal-enter-active');
+            modalContent.classList.remove('modal-content-enter-active');
+            setTimeout(() => {
+                aiAssistantModal.classList.add('hidden');
+            }, 300); // Match this with the CSS transition duration
         };
 
-        generateBtn.addEventListener('click', async () => {
-            const selectedProjectTitle = projectSelect.value;
-            if (!selectedProjectTitle) {
-                questionsContainer.innerHTML = '<p class="text-red-400">Please select a project.</p>';
-                questionsContainer.classList.remove('hidden');
+        openAssistantBtn.addEventListener('click', showModal);
+        aiAssistantLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            showModal();
+        });
+        closeAssistantBtn.addEventListener('click', hideModal);
+        
+        const showLoading = (message) => {
+            loadingIndicator.querySelector('p').textContent = message;
+            loadingIndicator.classList.remove('hidden');
+            responseContainer.classList.add('hidden');
+        };
+
+        const hideLoading = () => {
+            loadingIndicator.classList.add('hidden');
+            responseContainer.classList.remove('hidden');
+        };
+
+        const displayResponse = (text) => {
+            responseContainer.innerHTML = text;
+        };
+        
+        askBtn.addEventListener('click', async () => {
+            const question = userQuestion.value.trim();
+            if (!question) {
+                displayResponse('<p class="text-red-400">Please enter a question to ask the assistant.</p>');
                 return;
             }
 
-            const projectDescription = projectDescriptions[selectedProjectTitle];
-
-            // Show loading state
-            questionsContainer.classList.add('hidden');
-            loadingIndicator.classList.remove('hidden');
+            showLoading('Analyzing profile...');
             
             try {
-                const prompt = `Act as a technical interviewer. Based on the following project description, generate 5-7 insightful interview questions. Focus on the candidate's role, challenges, and outcomes.
-                
-                Project: ${selectedProjectTitle}
-                Description: ${projectDescription}
-                
-                Please format the response as a list of questions.`;
+                const systemPrompt = `Act as a personal career assistant for Pravin Nikam. Your task is to answer questions about Pravin's professional profile based *only* on the provided resume content. Be concise, professional, and confident. Do not make up information that is not in the resume.`;
+                const userQuery = `${resumeContent}\n\nUser Question: ${question}`;
 
                 const apiKey = ""; 
                 const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
 
                 const payload = {
-                    contents: [{ parts: [{ text: prompt }] }],
-                    tools: [{ "google_search": {} }],
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    systemInstruction: {
+                        parts: [{ text: systemPrompt }]
+                    }
                 };
 
                 const response = await fetch(apiUrl, {
@@ -412,28 +523,66 @@
                 }
 
                 const result = await response.json();
-                const text = result?.candidates?.[0]?.content?.parts?.[0]?.text || "No questions could be generated. Please try again.";
-
-                // Format the text into an HTML list
-                const formattedQuestions = text.split('\n').map(q => q.trim()).filter(q => q.length > 0).map(q => `<li class="mb-2">${q}</li>`).join('');
-
-                questionsContainer.innerHTML = `
-                    <h4 class="text-xl font-bold text-white mb-4">Potential Interview Questions:</h4>
-                    <ul class="list-disc list-outside text-gray-300 pl-5">
-                        ${formattedQuestions}
-                    </ul>
-                `;
+                const text = result?.candidates?.[0]?.content?.parts?.[0]?.text || "I'm sorry, I couldn't find an answer to that question in the provided profile.";
+                
+                displayResponse(`<p>${text}</p>`);
 
             } catch (error) {
-                console.error('Error generating questions:', error);
-                questionsContainer.innerHTML = '<p class="text-red-400">An error occurred while generating questions. Please try again later.</p>';
+                console.error('Error generating response:', error);
+                displayResponse('<p class="text-red-400">An error occurred while processing your request. Please try again later.</p>');
             } finally {
-                // Hide loading state and show results
-                loadingIndicator.classList.add('hidden');
-                questionsContainer.classList.remove('hidden');
+                hideLoading();
+            }
+        });
+
+        compareBtn.addEventListener('click', async () => {
+            const jdUrl = jdUrlInput.value.trim();
+            if (!jdUrl) {
+                displayResponse('<p class="text-red-400">Please enter a valid job description URL.</p>');
+                return;
+            }
+
+            showLoading('Comparing profile to job description...');
+            
+            try {
+                const systemPrompt = `Act as a professional recruiter. Your task is to compare the provided resume content with the job description found at the given URL. Identify key matches in skills, experience, and responsibilities. Highlight areas of strength and potential gaps. Provide a clear, easy-to-read summary.`;
+                const userQuery = `${resumeContent}\n\nJob Description URL: ${jdUrl}`;
+
+                const apiKey = ""; 
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                const payload = {
+                    contents: [{ parts: [{ text: userQuery }] }],
+                    tools: [{ "google_search": {} }],
+                    systemInstruction: {
+                        parts: [{ text: systemPrompt }]
+                    }
+                };
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (!response.ok) {
+                    throw new Error(`API call failed with status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                const text = result?.candidates?.[0]?.content?.parts?.[0]?.text || "I'm sorry, I couldn't complete the comparison. Please check the URL and try again.";
+
+                displayResponse(`<div class="prose max-w-none">${text}</div>`);
+
+            } catch (error) {
+                console.error('Error comparing profiles:', error);
+                displayResponse('<p class="text-red-400">An error occurred while comparing profiles. Please try again later.</p>');
+            } finally {
+                hideLoading();
             }
         });
     });
+
 </script>
 
 </body>
