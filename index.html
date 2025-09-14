@@ -8,24 +8,52 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --bg-color: #F8F9FA;
+            --text-color: #333;
+            --card-bg: #fff;
+            --hero-bg: linear-gradient(135deg, #FFD580 0%, #F8F9FA 100%);
+            --divider-color: #E2E8F0;
+            --nav-link-color: #6C757D;
+            --hover-link-color: #007BFF;
+            --heading-color: #1F2937;
+            --subheading-color: #374151;
+            --body-text-color: #4B5563;
+        }
+
+        .dark-mode {
+            --bg-color: #1a202c;
+            --text-color: #e2e8f0;
+            --card-bg: #2d3748;
+            --hero-bg: linear-gradient(135deg, #4c51bf 0%, #1a202c 100%);
+            --divider-color: #4a5568;
+            --nav-link-color: #a0aec0;
+            --hover-link-color: #63b3ed;
+            --heading-color: #e2e8f0;
+            --subheading-color: #a0aec0;
+            --body-text-color: #cbd5e0;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #F8F9FA; /* Light gray background */
-            color: #333; /* Dark text */
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
         }
         .section-divider {
             height: 2px;
-            background-color: #E2E8F0;
+            background-color: var(--divider-color);
             width: 100%;
-            max-width: 800px;
             margin: 2.5rem auto;
+            transition: background-color 0.3s;
         }
         .nav-link {
             transition: color 0.2s ease-in-out;
-            color: #6C757D;
+            color: var(--nav-link-color);
         }
         .nav-link:hover {
-            color: #007BFF; /* Professional blue */
+            color: var(--hover-link-color);
         }
         html {
             scroll-behavior: smooth;
@@ -33,15 +61,19 @@
 
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, #FFD580 0%, #F8F9FA 100%);
+            background: var(--hero-bg);
+            transition: background 0.5s;
         }
         .card-hover {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            background-color: #fff;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s;
+            background-color: var(--card-bg);
         }
         .card-hover:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .dark-mode .card-hover:hover {
+            box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.05), 0 4px 6px -2px rgba(255, 255, 255, 0.02);
         }
 
         .floating-button {
@@ -50,32 +82,34 @@
             right: 20px;
             z-index: 1000;
         }
-
-        /* Ensure main container is responsive */
-        main {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-            width: 100%;
-            box-sizing: border-box;
+        
+        h1, h2, h3, h4 {
+            color: var(--heading-color);
         }
+
+        .dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4 {
+            color: var(--heading-color);
+        }
+
     </style>
 </head>
 <body class="antialiased">
 
     <!-- Header & Navigation -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
+    <header class="shadow-sm sticky top-0 z-50" style="background-color:var(--card-bg)">
         <div class="container mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between">
-            <a href="#" class="text-2xl font-bold text-gray-800">Pravin Nikam</a>
-            <nav class="mt-4 sm:mt-0">
-                <ul class="flex space-x-4 text-gray-600 font-medium">
+            <a href="#" class="text-2xl font-bold" style="color:var(--heading-color)">Pravin Nikam</a>
+            <nav class="mt-4 sm:mt-0 flex items-center space-x-4">
+                <ul class="flex space-x-4 font-medium">
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#skills" class="nav-link">Skills</a></li>
                     <li><a href="#experience" class="nav-link">Experience</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
+                <button id="theme-toggle" class="p-2 rounded-full" style="background-color:var(--card-bg)">
+                    <span class="text-xl" style="color:var(--heading-color)">🌙</span>
+                </button>
             </nav>
         </div>
     </header>
@@ -87,9 +121,9 @@
             <div class="mb-6">
                 <img src="1757862676763.png" alt="Pravin Nikam's profile photo" class="w-32 h-32 rounded-full mx-auto shadow-md object-cover object-center border-4 border-white">
             </div>
-            <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 text-gray-800">Pravin Nikam</h1>
-            <h2 class="text-2xl font-semibold mb-6 text-gray-700">Business Analyst & Project Coordinator</h2>
-            <p class="text-lg max-w-2xl mx-auto leading-relaxed text-gray-600">
+            <h1 class="text-4xl sm:text-5xl font-extrabold mb-4" style="color:var(--heading-color)">Pravin Nikam</h1>
+            <h2 class="text-2xl font-semibold mb-6" style="color:var(--subheading-color)">Business Analyst & Project Coordinator</h2>
+            <p class="text-lg max-w-2xl mx-auto leading-relaxed" style="color:var(--body-text-color)">
                 A versatile Business Analyst with over 5 years of experience in the IT sector, specializing in end-to-end project management, data-driven analysis, and strategic stakeholder engagement. Proven expertise in the EDWH, CRM, and Banking LOS domains, with a strong track record of enhancing operational efficiency and delivering impactful solutions through business process optimization. Seeking a challenging hybrid role that leverages both analytical and project leadership skills to drive strategic initiatives.
             </p>
             <a href="#contact" class="mt-8 inline-block bg-white text-blue-600 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300">Get in Touch</a>
@@ -99,13 +133,13 @@
         <div class="section-divider"></div>
 
         <!-- Skills Section -->
-        <section id="skills" class="p-8 rounded-lg mb-8">
-            <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">Skills</h3>
+        <section id="skills" class="p-8 rounded-lg mb-8" style="background-color:var(--bg-color)">
+            <h3 class="text-3xl font-bold text-center" style="color:var(--heading-color)">Skills</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Business Analysis -->
                 <div class="card-hover p-6 rounded-lg shadow-md">
-                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Business Analysis</h4>
-                    <ul class="list-disc list-inside space-y-1 text-gray-600">
+                    <h4 class="text-xl font-semibold mb-3" style="color:var(--heading-color)">Business Analysis</h4>
+                    <ul class="list-disc list-inside space-y-1" style="color:var(--text-color)">
                         <li>Requirement gathering</li>
                         <li>BRD/FRD creation</li>
                         <li>Gap analysis</li>
@@ -116,8 +150,8 @@
                 </div>
                 <!-- Data Analytics -->
                 <div class="card-hover p-6 rounded-lg shadow-md">
-                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Data Analytics</h4>
-                    <ul class="list-disc list-inside space-y-1 text-gray-600">
+                    <h4 class="text-xl font-semibold mb-3" style="color:var(--heading-color)">Data Analytics</h4>
+                    <ul class="list-disc list-inside space-y-1" style="color:var(--text-color)">
                         <li>SQL, Python, Power BI, Tableau</li>
                         <li>Excel (VBA, Pivot Tables)</li>
                         <li>Data Modelling</li>
@@ -126,8 +160,8 @@
                 </div>
                 <!-- Project Management -->
                 <div class="card-hover p-6 rounded-lg shadow-md">
-                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Project Management</h4>
-                    <ul class="list-disc list-inside space-y-1 text-gray-600">
+                    <h4 class="text-xl font-semibold mb-3" style="color:var(--heading-color)">Project Management</h4>
+                    <ul class="list-disc list-inside space-y-1" style="color:var(--text-color)">
                         <li>Agile, SDLC, ITSM</li>
                         <li>UAT coordination</li>
                         <li>Post-deployment validation</li>
@@ -136,8 +170,8 @@
                 </div>
                 <!-- Domain Expertise -->
                 <div class="card-hover p-6 rounded-lg shadow-md">
-                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Domain Expertise</h4>
-                    <ul class="list-disc list-inside space-y-1 text-gray-600">
+                    <h4 class="text-xl font-semibold mb-3" style="color:var(--heading-color)">Domain Expertise</h4>
+                    <ul class="list-disc list-inside space-y-1" style="color:var(--text-color)">
                         <li>Healthcare ETL</li>
                         <li>CRM Systems (Salesforce, SalesGo)</li>
                         <li>Banking LOS, Salesforce</li>
@@ -145,8 +179,8 @@
                 </div>
                  <!-- Stakeholder Engagement -->
                 <div class="card-hover p-6 rounded-lg shadow-md">
-                    <h4 class="text-xl font-semibold text-gray-800 mb-3">Stakeholder Engagement</h4>
-                    <ul class="list-disc list-inside space-y-1 text-gray-600">
+                    <h4 class="text-xl font-semibold mb-3" style="color:var(--heading-color)">Stakeholder Engagement</h4>
+                    <ul class="list-disc list-inside space-y-1" style="color:var(--text-color)">
                         <li>Cross-functional collaboration</li>
                         <li>Feasibility studies</li>
                         <li>Risk mitigation</li>
@@ -159,14 +193,14 @@
         <div class="section-divider"></div>
 
         <!-- Experience Section -->
-        <section id="experience" class="p-8 rounded-lg mb-8">
-            <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">Experience</h3>
+        <section id="experience" class="p-8 rounded-lg mb-8" style="background-color:var(--bg-color)">
+            <h3 class="text-3xl font-bold mb-8 text-center" style="color:var(--heading-color)">Experience</h3>
             
             <!-- Cognizant -->
             <div class="mb-8 p-6 rounded-lg shadow-md card-hover">
-                <h4 class="text-2xl font-semibold text-gray-800">Business Analyst – Associate, Cognizant Technology Solutions</h4>
-                <p class="text-gray-600 text-sm mt-1 mb-4">Pune, India | May 2023 – Present</p>
-                <ul class="list-disc list-outside space-y-2 text-gray-600 pl-5">
+                <h4 class="text-2xl font-semibold" style="color:var(--heading-color)">Business Analyst – Associate, Cognizant Technology Solutions</h4>
+                <p class="text-sm mt-1 mb-4" style="color:var(--text-color)">Pune, India | May 2023 – Present</p>
+                <ul class="list-disc list-outside space-y-2 pl-5" style="color:var(--body-text-color)">
                     <li>Responsible for end-to-end business analysis for an <strong>ETL project</strong> with the US-based client AmeriHealth Caritas, working with both the EDWH and BAU teams.</li>
                     <li>Drafted <strong>Functional Requirement Documents (FRDs)</strong> and detailed end-to-end mapping documents to support project deliverables.</li>
                     <li>Managed <strong>production failures</strong> related to Tidal jobs, identifying root causes, obtaining business approvals for changes, and coordinating the deployment of enhancements and break-fixes.</li>
@@ -178,9 +212,9 @@
 
             <!-- Electronica Finance -->
             <div class="mb-8 p-6 rounded-lg shadow-md card-hover">
-                <h4 class="text-2xl font-semibold text-gray-800">Assistant Manager, Electronica Finance Limited</h4>
-                <p class="text-gray-600 text-sm mt-1 mb-4">Pune, India | Feb 2022 – Apr 2023</p>
-                <ul class="list-disc list-outside space-y-2 text-gray-600 pl-5">
+                <h4 class="text-2xl font-semibold" style="color:var(--heading-color)">Assistant Manager, Electronica Finance Limited</h4>
+                <p class="text-sm mt-1 mb-4" style="color:var(--text-color)">Pune, India | Feb 2022 – Apr 2023</p>
+                <ul class="list-disc list-outside space-y-2 pl-5" style="color:var(--body-text-color)">
                     <li>Functioned as a <strong>Business Analyst</strong> and team lead for a <strong>CRM portal</strong> and the web/mobile-based marketplace application, Raftaar.</li>
                     <li>Automated a manual KYC recapture process using <strong>Python</strong>, which indexed document paths from shared folders into an Excel file, significantly reducing search time for customer documents.</li>
                     <li>Used <strong>Figma</strong> to create, alter, and refine wireframes for the Raftaar marketplace application, ensuring a user-friendly and intuitive design.</li>
@@ -193,9 +227,9 @@
 
             <!-- IDFC First Bank -->
             <div class="mb-8 p-6 rounded-lg shadow-md card-hover">
-                <h4 class="text-2xl font-semibold text-gray-800">Officer Executive, IDFC First Bank Limited</h4>
-                <p class="text-gray-600 text-sm mt-1 mb-4">Pune, India | Apr 2021 – Jan 2022</p>
-                <ul class="list-disc list-outside space-y-2 text-gray-600 pl-5">
+                <h4 class="text-2xl font-semibold" style="color:var(--heading-color)">Officer Executive, IDFC First Bank Limited</h4>
+                <p class="text-sm mt-1 mb-4" style="color:var(--text-color)">Pune, India | Apr 2021 – Jan 2022</p>
+                <ul class="list-disc list-outside space-y-2 pl-5" style="color:var(--body-text-color)">
                     <li>Opened current and saving accounts for walk-in customers while consistently exceeding sales targets.</li>
                     <li>Functioned as a <strong>business analyst</strong> on the <strong>SFDC CRM platform</strong>, identifying and resolving system issues to improve lead generation efficiency.</li>
                     <li>Drafted <strong>UI-level changes</strong> in <strong>Figma</strong> and created detailed <strong>BRD, FRD, FSD, and PRD documents</strong> to facilitate clear communication between business and development teams.</li>
@@ -205,9 +239,9 @@
 
             <!-- TSM CAPITAL -->
             <div class="mb-8 p-6 rounded-lg shadow-md card-hover">
-                <h4 class="text-2xl font-semibold text-gray-800">MIS Executive, TSM CAPITAL</h4>
-                <p class="text-gray-600 text-sm mt-1 mb-4">Solapur, India | Dec 2019 – Apr 2021</p>
-                <ul class="list-disc list-outside space-y-2 text-gray-600 pl-5">
+                <h4 class="text-2xl font-semibold" style="color:var(--heading-color)">MIS Executive, TSM CAPITAL</h4>
+                <p class="text-sm mt-1 mb-4" style="color:var(--text-color)">Solapur, India | Dec 2019 – Apr 2021</p>
+                <ul class="list-disc list-outside space-y-2 pl-5" style="color:var(--body-text-color)">
                     <li>Led a team of 8 to achieve sales targets by providing data-driven guidance and training, and by ensuring a smooth onboarding process for new hires.</li>
                     <li>Analyzed and transformed raw data to provide team members with high-quality, pre-filtered customer leads for specific regions, maximizing their conversion rate.</li>
                     <li>Coordinated the end-to-end lead lifecycle, from data provision to final closure, and collaborated with subsequent processing teams to ensure timely and accurate handoff.</li>
@@ -216,9 +250,9 @@
 
             <!-- CaliberHR -->
             <div class="mb-8 p-6 rounded-lg shadow-md card-hover">
-                <h4 class="text-2xl font-semibold text-gray-800">Executive, CaliberHR</h4>
-                <p class="text-gray-600 text-sm mt-1 mb-4">Pune, India | Jan 2018 – Nov 2019</p>
-                <ul class="list-disc list-outside space-y-2 text-gray-600 pl-5">
+                <h4 class="text-2xl font-semibold" style="color:var(--heading-color)">Executive, CaliberHR</h4>
+                <p class="text-sm mt-1 mb-4" style="color:var(--text-color)">Pune, India | Jan 2018 – Nov 2019</p>
+                <ul class="list-disc list-outside space-y-2 pl-5" style="color:var(--body-text-color)">
                     <li>Drove credit card sales and cross-selling by engaging with pre-qualified customers, effectively communicating product benefits to secure new accounts.</li>
                     <li>Generated daily sales reports using <strong>Excel</strong>, providing key insights to management for performance tracking and strategic planning.</li>
                     <li>Utilized <strong>SQL</strong> and <strong>CRM systems</strong> to extract and transform customer data, identifying eligible account holders and generating leads to support sales targets.</li>
@@ -230,21 +264,21 @@
         <div class="section-divider"></div>
 
         <!-- Education & Certifications Section -->
-        <section id="education" class="p-8 rounded-lg mb-8 bg-gray-100 shadow-md">
-            <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">Education & Certifications</h3>
+        <section id="education" class="p-8 rounded-lg mb-8 shadow-md" style="background-color:var(--bg-color)">
+            <h3 class="text-3xl font-bold mb-8 text-center" style="color:var(--heading-color)">Education & Certifications</h3>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Education -->
-                <div class="p-6 bg-white rounded-lg shadow-sm card-hover">
-                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Education</h4>
-                    <ul class="list-disc list-outside space-y-1 text-gray-600 pl-5">
+                <div class="p-6 rounded-lg shadow-sm card-hover">
+                    <h4 class="text-xl font-semibold mb-2" style="color:var(--heading-color)">Education</h4>
+                    <ul class="list-disc list-outside space-y-1 pl-5" style="color:var(--body-text-color)">
                         <li><strong>MBA, Business Analytics</strong> – Zeal Education Society, Pune (2022)</li>
                         <li><strong>Bachelor’s in Computer Application</strong> – Green Fingers College, Solapur (2020)</li>
                     </ul>
                 </div>
                 <!-- Certifications -->
-                <div class="p-6 bg-white rounded-lg shadow-sm card-hover">
-                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Certifications</h4>
-                    <ul class="list-disc list-outside space-y-1 text-gray-600 pl-5">
+                <div class="p-6 rounded-lg shadow-sm card-hover">
+                    <h4 class="text-xl font-semibold mb-2" style="color:var(--heading-color)">Certifications</h4>
+                    <ul class="list-disc list-outside space-y-1 pl-5" style="color:var(--body-text-color)">
                         <li>Microsoft Power BI, Microsoft (2025)</li>
                         <li>Intermediate SQL, HackerRank (2024)</li>
                         <li>Data Analysis with R, Coursera (2023)</li>
@@ -258,9 +292,9 @@
         <div class="section-divider"></div>
 
         <!-- Contact Section -->
-        <section id="contact" class="p-8 rounded-lg mb-8 bg-gray-100 shadow-md text-center">
-            <h3 class="text-3xl font-bold text-gray-800 mb-6">Contact</h3>
-            <p class="text-gray-600 mb-4">Feel free to reach out for collaboration or to discuss new opportunities.</p>
+        <section id="contact" class="p-8 rounded-lg mb-8 shadow-md text-center" style="background-color:var(--bg-color)">
+            <h3 class="text-3xl font-bold mb-6" style="color:var(--heading-color)">Contact</h3>
+            <p class="mb-4" style="color:var(--body-text-color)">Feel free to reach out for collaboration or to discuss new opportunities.</p>
             <div class="space-y-2 md:space-y-0 md:space-x-4 flex flex-col md:flex-row justify-center">
                 <a href="mailto:pravin4u484@gmail.com" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-500 transition-colors duration-300">Email Me</a>
                 <a href="https://www.linkedin.com/in/pravinsnikam/" target="_blank" class="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-500 transition-colors duration-300">Connect on LinkedIn</a>
@@ -277,6 +311,40 @@
             <span>⬇️</span>
         </a>
     </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        
+        // Function to apply the theme
+        const applyTheme = (isDark) => {
+            if (isDark) {
+                document.body.classList.add('dark-mode');
+                themeToggleBtn.innerHTML = '☀️';
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeToggleBtn.innerHTML = '🌙';
+            }
+        };
+
+        // Check for saved theme preference or system preference
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme) {
+            applyTheme(currentTheme === 'dark');
+        } else {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            applyTheme(prefersDark);
+        }
+
+        // Add event listener for the toggle button
+        themeToggleBtn.addEventListener('click', () => {
+            const isDarkMode = document.body.classList.contains('dark-mode');
+            const newTheme = isDarkMode ? 'light' : 'dark';
+            localStorage.setItem('theme', newTheme);
+            applyTheme(newTheme === 'dark');
+        });
+    });
+</script>
 
 </body>
 </html>
